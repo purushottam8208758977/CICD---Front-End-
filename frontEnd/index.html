@@ -1,0 +1,47 @@
+<!--ENTRY POINT FOR FRONT END -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <link rel="stylesheet" href="./css/styleInstructions.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-socket-io/0.7.0/socket.min.js"></script>
+
+    
+    
+
+   
+    <script src="app.js"></script>
+    <script src="./controller/loginController.js"></script>
+    <script src="./controller/registerController.js"></script>
+    <script src="./controller/forgetController.js"></script>
+    <script src="./controller/resetController.js"></script>
+    <script src="./controller//allUsersController.js"></script>
+
+    <script src="service/registerService.js"></script>
+    <script src="service/loginService.js"></script>
+    <script src="service/forgetService.js"></script>
+    <script src="service/resetService.js"></script>
+    <script src="service/allUsersService.js"></script>
+
+    <script>
+        var socket = io();
+    </script>
+
+</head>
+
+<body ng-app="app">
+    <div>
+        <ui-view>
+
+        </ui-view>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+body {
+   /* background-color:rgb(55, 147, 201);*/
+   background-image: url('../assets/back1.jpg');
+   overflow: hidden;
+   background-repeat: no-repeat;
+   background-size: cover;
+   font-family: 'Averia Libre';
+
+}
+
+.animation{
+    position:absolute;
+    left:3%;
+    top:65%;
+    width: 200px;
+}
+
+.beforeLoading{
+    position: absolute;
+    top:15%;
+    left:30%;
+    width: 500px;
+    height: 500px
+}
+
+.userSelection{
+    position: absolute;
+    top:20%;
+    left: 40%;
+    color: antiquewhite
+}
+
+.fieldsHolder {
+
+    width: 400px;
+    height: 300px;
+    position: bottom;
+    left: 35%
+}
+
+.login{
+    border-radius: 10px;
+    font-family: 'Averia Libre';
+    color:yellow;
+    text-shadow:0px 0px 15px white;
+    width: 250px;
+    height: 15px;
+    position: center;
+    
+    padding: 10px 7px 22px 7px;
+    box-shadow: 0px 0px 10px black
+}
+
+
+.titleGiven {
+    background-color: aliceblue,
+}
+
+
+.box {
+    color:white;
+    padding: 30px;
+}
+
+.ForgetPassword {
+
+    color:white;
+}
+
+.enterEmail{
+    font-family: 'Averia Libre';
+    color: white;
+
+}
+
+.registerFields{
+    font-family: 'Averia Libre';
+    color: white;
+}
+
+.titleOfTemplate {
+    color: yellow;
+    font-family: 'Averia Libre';
+    position: center;
+    left: 35%
+}
+
+button {
+    background-color: rgb(216, 216, 58);
+    border-radius: 10px;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border:2px solid black;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+
+/* @description - To display allusers in one left dashboard*/
+
+.displayAllUsers {
+    color:black;
+    border-radius: 10px;
+    background-color: white;
+    position: fixed;
+    width: 400px;
+    height: 500px;
+    padding: 50px 15px 22px 20px;
+   top: 16%
+}
+
+.dashboard{
+    font-family: 'Sofia';
+    font-size: 30px;
+
+    font-weight:bolder;
+    border-radius: 10px;
+    text-shadow: 0px 0px 15px yellow;
+    color: white;
+    width: 500px;
+    height: 15px;
+    position: absolute;
+    left: 40%;
+
+    padding: 10px 15px 22px 20px;
+}
+
+.eachUserButton{
+    background-color: rgb(216, 216, 58);
+    font-family: 'Averia Libre';
+    border-radius: 10px;
+    color: black;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: 2px solid black;
+    cursor: pointer;
+    width: 75%;
+    
+}
+
+.usersDisplayBox{
+   
+    position: absolute;
+    overflow:hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
+    overflow-y: scroll;
+    
+ 
+    border-radius: 10px;
+    color: black;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top:20%;
+    
+    padding: 10px 15px 22px 20px;
+    
+}
+
+.userProfileName
+{   
+    top:6%;
+    border-radius: 10px;
+    font-weight:bolder;
+    color: black;
+    width: 150px;
+    height: 15px;
+    position: absolute;
+    left: 2%;
+    background-color: rgb(216, 216, 58);
+    padding: 10px 15px 22px 20px;
+}
+
+.chatBox{
+    /*background-color:white;*/
+   
+    background-size: cover;
+    overflow:auto;
+    border-radius: 10px;
+    color:black;
+    width: 750px;
+    height: 400px;
+    position: absolute;
+    left:30%;
+    top:28%;    
+    padding: 10px 15px 22px 20px;
+}
+
+
+
+#sendMessageInChat{
+    position: absolute;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    padding: 11px 53px 27px 16px;
+    font-family: 'Averia Libre';
+    margin: 8px 0;
+    bottom: 11%;
+    right: 9%;
+    border: 2px solid black;
+    cursor: pointer;
+    height: 0px;
+    width: 6%;
+
+    
+}
+
+
+
+.toTypeMessage{
+    position: absolute;
+    left:30%;
+    bottom: 12%;
+    border-radius: 10px;
+    height: 50px;
+    width: 54%;
+}
+
+.tappedUser{
+    position: absolute;
+    background-color:  rgb(216, 216, 58);
+    border-radius: 10px;
+    border:1px solid white;
+    box-shadow: 0px 0px 10px white;
+    padding: 7px 51px 27px 11px;
+    color: black;
+    left: 30.5%;
+    top: 21%;
+    width: 97px;
+    height: 0px;   
+}
+
+.handlingLogOutButton{
+    position: absolute;
+    background-color: black;
+    border-radius: 10px;
+    left:85%;
+    top: 73%;
+    height: 45px;
+    width: 6%;
+}
+
+#logoutButton{
+    position: absolute;
+    background-color:#E94B3CFF;
+    border-radius: 10px;
+    color: white;
+    padding: 9px 14px 28px 13px;
+    margin: 8px 0;
+    font-family: 'Averia Libre';
+    font-size: 18px;
+    top: 3%;
+    right:3%;
+    border: 2px solid black;
+    cursor: pointer;
+    height: 0px;
+    width: 10%;
+}
+
+.senderOnRight{
+    position: absolute;
+    background-color: green;
+    margin-top: 10px;
+    padding:10px;
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    right: 10px
+
+}
+
+.receiverOnLeft{
+    position: absolute;
+    background-color:white;
+    border-radius: 10px;
+    left: 10px;
+    margin-top: 10px;
+    padding:10px;
+    height: auto;
+    width: auto;
+}

@@ -1,0 +1,66 @@
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Averia Libre' rel='stylesheet'>
+
+<body>
+
+        <!-- Title of the template-->
+        <h2 class="dashboard"><b>Welcome to AllChat !</b></h2>
+
+        <img class="animation" src="../assets/super.gif">
+
+        <div ng-hide="showBeforeContent">
+                
+                <img class="beforeLoading" src="../assets/fullCloud.gif">
+
+        </div>
+
+        <!-- User profile name displayed on the top left corner -->
+        <div class="userProfileName"><b>Hi {{currentUser}} ! </b> </div>
+
+
+        <!-- Users list in the left side with a scroll feature  -->
+        <div class="usersDisplayBox">
+                <div ng-repeat="x in allUsers">
+                        <button type="submit" class="eachUserButton" ng-click="getMessage(x)">
+                                <b>{{x.firstName}}</b></button>
+                </div>
+        </div>
+
+
+        <div ng-show="showChatBox">
+
+                <!-- To display the clicked user name on the top of the chat box -->
+                <div style="text-align: center" class="tappedUser"><b>{{currentReceiver}}</b></div>
+
+
+                <!-- Chatting box to show messages  -->
+                <div class="chatBox">
+                        <div ng-repeat="x in messagesArray">
+                                <br><br><br>
+                                <span class="senderOnRight" ng-show="senderRightId==x.senderId">{{x.message}}</span>
+                                <span class="receiverOnLeft" ng-show="senderRightId!=x.senderId">{{x.message}}</span>
+
+                        </div>
+                </div>
+
+
+                <!-- An empty space to type messages  -->
+                <div class="toTypeMessage">
+                        <input type="text" placeholder="What's on your mind !" ng-model="message">
+                </div>
+
+                <!-- It handles the send button placed just after typing message box -->
+
+                <button align="center" id="sendMessageInChat" type="submit"
+                        ng-click="sendMessage()"><b>SEND</b></button>
+
+        </div>
+
+
+        <button type="submit" id="logoutButton" value="LOG OUT" ui-sref="login"><b>Log Out !</b></button>
+
+
+
+</body>
+
+</html>

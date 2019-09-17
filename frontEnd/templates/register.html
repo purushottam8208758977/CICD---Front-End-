@@ -1,0 +1,44 @@
+<link href='https://fonts.googleapis.com/css?family=Averia Libre' rel='stylesheet'>
+
+<body>
+    <div align="center" class="titleOfTemplate">
+        <h2><b>
+                Lets set up your account ... 
+            </b>
+        </h2>
+        <div class="fieldsHolder">
+            <form>
+                <div class="registerFields"><br><br>
+                    <label><b>First name</b></label>
+                    <input type="text" placeholder="Enter you first name !" ng-model="firstName" required>
+
+                    <br>
+                    <br>
+
+                    <label><b>Last name</b></label>
+                    <input type="text" placeholder="Enter your last name !" ng-model="lastName" required>
+
+                    <br>
+                    <br>
+
+                    <label><b>Email</b></label>
+                    <input type="email" placeholder="Enter your email !" ng-model="email" required>
+
+                    <br>
+                    <br>
+
+                    <label><b>Password</b></label>
+                    <input type="password" placeholder="Enter you Password !" ng-model="password" required>
+                    <br><br>
+
+                    <button type="submit" value="Create account" ng-click="register()"><b>Create account !</b></button>
+                    <br><br>
+                   <span style="color:rgb(216, 216, 58);"><b>Already have a account ?</b> </span>
+                    <button class="cancel" type="submit" value="Go Back to Login" ui-sref="login"><b>LOGIN</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
