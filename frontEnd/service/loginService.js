@@ -13,7 +13,7 @@ app.service("loginServices", function ($http, $location) {
                 data: data
             }).then(
 
-                function (response) { // response will come both times when details match and also when they dont match
+                function (response) { // respons e will come both times when details match and also when they dont match
 
 
 
