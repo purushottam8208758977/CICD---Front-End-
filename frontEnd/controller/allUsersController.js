@@ -5,14 +5,14 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
 
 
 
-   $scope.duplicationRemoval = true;
+    $scope.duplicationRemoval = true;
 
 
     $scope.name = localStorage.getItem('name')
     $scope.email = localStorage.getItem('email')
     $scope.token = localStorage.getItem('token')
     $scope.id = localStorage.getItem('id')
-    
+
     let sentToken = $scope.token;
 
     $scope.messagesArray = []
@@ -41,12 +41,12 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
         localStorage.setItem("receiverId", x._id)
         localStorage.setItem("receiverName", x.firstName)
 
-        $scope.currentReceiver=localStorage.getItem('receiverName') // to set current user name 
+        $scope.currentReceiver = localStorage.getItem('receiverName') // to set current user name 
         $scope.getAllMessage()
     }
 
-   
-   
+
+
 
     $scope.getAllMessage = function () {
 
@@ -76,8 +76,8 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
 
         try {
 
-//            if ($scope.duplicationRemoval) {
-                                 SocketService.on("messageContent", function (message) {
+            if ($scope.duplicationRemoval) {
+                SocketService.on("messageContent", function (message) {
 
                     console.log(" New Message in try front end-----> ", message);
 
@@ -90,8 +90,8 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
                         }
                     }
                 })
-          // $scope.duplicationRemoval=false;
-           
+                $scope.duplicationRemoval = false;
+            }
 
         }
         catch (err) {
