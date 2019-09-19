@@ -41,7 +41,7 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
         localStorage.setItem("receiverId", x._id)
         localStorage.setItem("receiverName", x.firstName)
 
-        $scope.rName = localStorage.getItem('receiverName')
+        $scope.currentReceiver=localStorage.getItem('receiverName') // to set current user name 
         $scope.getAllMessage()
     }
 
