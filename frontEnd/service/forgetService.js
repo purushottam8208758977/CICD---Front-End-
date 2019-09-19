@@ -6,7 +6,7 @@ app.service("forgetPasswordServices", function ($http, $location) {
 
             {
                 method: 'POST',
-                url: 'http://localhost:4000/forgetPassword',
+                url: 'http://3.15.39.27:4000/forgetPassword',
                 data: data
             }).then(
 
