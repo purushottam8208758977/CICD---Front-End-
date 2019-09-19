@@ -20,7 +20,7 @@
 
         <!-- Users list in the left side with a scroll feature  -->
         <div class="usersDisplayBox">
-                <div ng-repeat="x in allUsers">
+                <div ng-repeat="x in allUsers" ng-show='id!=x._id'>
                         <button type="submit" class="eachUserButton" ng-click="getMessage(x)">
                                 <b>{{x.firstName}}</b></button>
                 </div>
