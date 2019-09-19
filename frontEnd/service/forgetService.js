@@ -14,7 +14,7 @@ app.service("forgetPasswordServices", function ($http, $location) {
 
                     if (response.data.result === false) {
 
-                        console.log("\n\n\t\tENTERED EMAIL NOT PRESENT IN DATABASE \n\nPLEASE ENTER A VALID EMAIL")
+                        console.log("\n\n\t\tENTERED EMAIL NOT PRESNT IN DATABASE \n\nPLEASE ENTER A VALID EMAIL")
 
                         $scope.forgetPassword = function () {
                             alert("ENTERED EMAIL NOT PRESENT IN DATABASE \n\nPLEASE ENTER A VALID EMAIL")
