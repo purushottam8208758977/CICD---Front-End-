@@ -76,8 +76,8 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
 
         try {
 
-            if ($scope.duplicationRemoval) {
-                SocketService.on("messageContent", function (message) {
+//            if ($scope.duplicationRemoval) {
+                                 SocketService.on("messageContent", function (message) {
 
                     console.log(" New Message in try front end-----> ", message);
 
@@ -90,8 +90,8 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
                         }
                     }
                 })
-           $scope.duplicationRemoval=false;
-           }
+          // $scope.duplicationRemoval=false;
+           
 
         }
         catch (err) {
