@@ -3,14 +3,20 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
 
     console.log("\n\n\tAll users controller being hit...");
 
+
+
+   $scope.duplicationRemoval = true;
+
+
     $scope.name = localStorage.getItem('name')
     $scope.email = localStorage.getItem('email')
     $scope.token = localStorage.getItem('token')
     $scope.id = localStorage.getItem('id')
+    
     let sentToken = $scope.token;
 
     $scope.messagesArray = []
-    
+
 
     $scope.allUsers = function () {
 
@@ -21,10 +27,17 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
     }
     $scope.allUsers();
 
+
+    $scope.showChatBox = false
+    $scope.showBeforeContent = false
+
     $scope.getMessage = function (x) {
         console.log(" \n\n\t in get message ----> allUsers controller ", x);
 
- 
+        $scope.showChatBox = true
+        $scope.showBeforeContent = true
+
+
         localStorage.setItem("receiverId", x._id)
         localStorage.setItem("receiverName", x.firstName)
 
@@ -32,17 +45,13 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
         $scope.getAllMessage()
     }
 
-    $scope.showChatBox=false
-    $scope.showBeforeContent=false
+   
+   
 
     $scope.getAllMessage = function () {
 
-        $scope.messagesArray=''
+        //$scope.messagesArray = ''
 
-        $scope.showChatBox=true
-        $scope.showBeforeContent=true
-
-       
         allUsersServices.getAllMessage($scope, sentToken);
 
     }
@@ -52,7 +61,7 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
 
         console.log("\n\n ----> typed message ", $scope.message);
 
-        
+
 
         var sendMessageObject = {
             'senderId': localStorage.getItem('id'),
@@ -61,30 +70,34 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
             'receiverName': localStorage.getItem('receiverName'),
             'message': $scope.message
         }
-        
-        SocketService.emit("sendingMessage", sendMessageObject) // it sends this object to the backend server
-        
-        
-        try {
-            SocketService.on($scope.senderId, function(message) {
 
-                console.log(" New Message-----> ", message);
-                
-                if (localStorage.getItem('id') == message.senderId || localStorage.getItem('receiverId') == message.receiverId) {
-                    if ($scope.messagesArray === undefined) {
-                        $scope.messagesArray = message; //assigning message to variable
+        SocketService.emit("sendingMessage", sendMessageObject) // it sends this object to the backend server
+
+
+        try {
+
+            if ($scope.duplicationRemoval) {
+                SocketService.on("messageContent", function (message) {
+
+                    console.log(" New Message in try front end-----> ", message);
+
+                    if (localStorage.getItem('id') == message.senderId || localStorage.getItem('receiverId') == message.receiverId) {
+                        if ($scope.messagesArray === undefined) {
+                            $scope.messagesArray = message; //assigning message to variable
+                        }
+                        else {
+                            $scope.messagesArray.push(message);
+                        }
                     }
-                    else {
-                        $scope.messagesArray.push(message);
-                    }
-                }
-            })
+                })
+           $scope.duplicationRemoval=false;
+           }
+
         }
         catch (err) {
             console.log("err--> ", err)
-         
+
         }
-         $scope.messagesArray.push(sendMessageObject) // shows the message in the chat box the moment you click the send button
     }
 
 

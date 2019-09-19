@@ -82,6 +82,9 @@ app.service("allUsersServices", function ($http, $location) {
 
                             //console.log("sender id ", messageDetails.receiverId);
 
+                            $scope.senderRightId=localStorage.getItem('id')
+
+                            $scope.currentReceiver=localStorage.getItem('receiverName') // to set current user name 
 
                             if (((localStorage.getItem('id') === messageDetails.receiverId) &&
 
@@ -94,14 +97,10 @@ app.service("allUsersServices", function ($http, $location) {
 
                                 array.push(messageDetails)
 
-                                $scope.messagesArray = array;
-
-                                $scope.currentReceiver=localStorage.getItem('receiverName') // to set current user name 
-                                
-                               $scope.senderRightId=localStorage.getItem('id')
-
+    
                                 console.log("\n\n\t\tMESSAGES LOADED SUCCESFULLY !")
                             }
+                            $scope.messagesArray = array;
                            
                         }
 
