@@ -37,7 +37,7 @@ app.service("loginServices", function ($http, $location) {
 
                             localStorage.setItem('email', $scope.email)
                             localStorage.setItem('token',response.data.result.token)
-                            localStorage.setItem('name',response.data.result.firstName)
+                            localStorage.setItem('name',response.data.result.name)
                             localStorage.setItem('id',response.data.result.id)
 
                            // console.log("\n\n\nEmail set in local storage ! ")
