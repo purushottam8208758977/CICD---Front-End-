@@ -56,7 +56,7 @@ app.service("allUsersServices", function ($http, $location) {
 
             {
                 method: 'GET',
-                url: 'http://localhost:4000/receiveMessage',
+                url: 'http://3.15.39.27:4000/receiveMessage',
                 // data: data,
                 headers: {
                     token: token
