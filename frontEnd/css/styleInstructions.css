@@ -15,6 +15,26 @@ body {
     width: 200px;
 }
 
+.developedBy{
+    position: absolute;
+    bottom: 10%;
+    right: 2%;
+    font-family: 'Sofia';
+    font-size: 30px;
+    font-weight:bolder;
+    text-shadow: 0px 0px 15px yellow;
+    color: white;
+}
+
+.danimation{
+    position: absolute;
+    bottom: 0%;
+    right: 24%;
+    width: 500px;
+    height: 200px
+    
+}
+
 .beforeLoading{
     position: absolute;
     top:15%;
