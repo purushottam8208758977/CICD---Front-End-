@@ -10,19 +10,23 @@
             <form>
                 <div class="registerFields"><br><br>
                     <label><b>First name</b></label>
-                    <input type="text" placeholder="Enter you first name !" ng-model="firstName" required>
+                    <input type="text" placeholder="Enter you first name !" ng-model="firstName" ng-keyUp="firstNameValidator(firstName)" required>
+                    <span ng-show="firstNameValidation" style="color: red">Ooops !  ...  First name should cantain only alphabets !</span>
 
                     <br>
                     <br>
 
                     <label><b>Last name</b></label>
-                    <input type="text" placeholder="Enter your last name !" ng-model="lastName" required>
+                    <input type="text" placeholder="Enter your last name !" ng-model="lastName" ng-keyUp="lastNameValidator(lastName)" required>
+                    <span ng-show="lastNameValidation" style="color: red">Ooops !  ...  Last name should cantain only alphabets !</span>
 
                     <br>
                     <br>
 
                     <label><b>Email</b></label>
-                    <input type="email" placeholder="Enter your email !" ng-model="email" required>
+                    <input type="email" placeholder="Enter your email !" ng-model="email" ng-keyup="emailValidator(email)" required>
+                    <span ng-show="emailValidation" style="color: red">Ooops !  ...  Please enter a valid email !</span>
+
 
                     <br>
                     <br>

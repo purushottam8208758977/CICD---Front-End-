@@ -61,17 +61,20 @@ app.controller("allUsersController", function ($scope, allUsersServices, SocketS
 
         console.log("\n\n ----> typed message ", $scope.message);
 
+        if ($scope.message) {    //empty message cant be sent
+            var sendMessageObject = {
+                'senderId': localStorage.getItem('id'),
+                'senderName': $scope.name,
+                'receiverId': localStorage.getItem('receiverId'),
+                'receiverName': localStorage.getItem('receiverName'),
+                'message': $scope.message
+            }
 
+            SocketService.emit("sendingMessage", sendMessageObject) // it sends this object to the backend server
 
-        var sendMessageObject = {
-            'senderId': localStorage.getItem('id'),
-            'senderName': $scope.name,
-            'receiverId': localStorage.getItem('receiverId'),
-            'receiverName': localStorage.getItem('receiverName'),
-            'message': $scope.message
         }
 
-        SocketService.emit("sendingMessage", sendMessageObject) // it sends this object to the backend server
+
 
 
         try {
