@@ -45,7 +45,7 @@ app.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterP
 
 app.service('SocketService', ['socketFactory', function SocketService(socketFactory) { 
     return socketFactory({
-        ioSocket: io.connect('http://3.15.39.27:4000')  // ioSocket is a built in keyword used to connect to the localhost
+        ioSocket: io.connect('http://3.17.58.103:4000')  // ioSocket is a built in keyword used to connect to the localhost
     }); 
 }]);
 

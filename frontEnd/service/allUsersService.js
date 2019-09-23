@@ -12,7 +12,7 @@ app.service("allUsersServices", function ($http, $location) {
 
             {
                 method: 'GET',
-                url: 'http://3.15.39.27:4000/allUsers',
+                url: 'http://3.17.58.103:4000/allUsers',
                 // data: data,
                 headers: {
                     token: token

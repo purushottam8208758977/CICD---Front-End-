@@ -8,7 +8,7 @@ app.service("resetPasswordServices", function ($http, $location) {
 
             {
                 method: 'POST',
-                url: 'http://3.15.39.27:4000/resetPassword/:token',
+                url: 'http://3.17.58.103:4000/resetPassword/:token',
                 data: data,
                
             }).then(
